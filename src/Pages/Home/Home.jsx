@@ -44,7 +44,7 @@ function Home() {
 
     <main >
       {/* navbar */}
-      <Navbar className="sticky-nav bg-body-secondary p-4" style={{position:'sticky', top: 0}}>
+      <Navbar className="sticky-nav bg-body-secondary p-4" style={{position:'sticky', top: 0, zIndex:'900'}}>
       <Container>
       <img src="https://res.cloudinary.com/dc13zibyc/image/upload/v1719710607/hpi6y4dukwyalabnyw1k.png" 
               width="35"
