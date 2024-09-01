@@ -13,7 +13,14 @@ import { Link  } from 'react-router-dom'
 import titleimg from '../../assets/images/startup.svg'
 import { Fade, Slide } from 'react-awesome-reveal';
 
-
+import {
+  HomeContainer,
+  HomeLeft,
+  HomeRight,
+  Image,
+  HomeWrapper,
+  HomeFirst,
+} from "./HomeElements";
 
 
 function Home() {
@@ -31,12 +38,13 @@ function Home() {
 
   return (
     <>
+    
 
+{/* better setup */}
 
-    {/* Navbar Home */}
-   
-
-    <Navbar className="sticky-nav bg-body-secondary p-4" style={{position:'sticky', top: 0}}>
+    <main >
+      {/* navbar */}
+      <Navbar className="sticky-nav bg-body-secondary p-4" style={{position:'sticky', top: 0}}>
       <Container>
       <img src="https://res.cloudinary.com/dc13zibyc/image/upload/v1719710607/hpi6y4dukwyalabnyw1k.png" 
               width="35"
@@ -61,38 +69,40 @@ function Home() {
       </Container>
     </Navbar>
 
-
-   
-
-
-
     {/* body */}
-    <div style={{height:'100%',width:'100%'}} className=' d-flexcontainer-fluid rorunded bg-body-secondary'>
-    <Row className='ms-auto align-items-center p-5 '>
-    <Col sm={12} md={6} lg={6}>
-    <Slide direction='up'>
-      <div className='container hideOverflow'>
-      <h1 style={{fontSize:'55px'}} className='align-items-center fw-bold'>Inventory & Stock Management Solution</h1>
-      <p>Welcome to our Inventory and Stock Management Website, your one-stop solution for efficient and seamless inventory management. Our platform is designed to help businesses of all sizes effectively track and manage their inventory in real-time.</p>
-      {/* <Link to={'/'} className='btn btn-success shadow'>Go To Dashboard</Link> */}
-      {/* <Link to={'/login'} className='btn btn-success btn-lg me-5' style={{boxShadow:'0px 5px 10px 1px rgba(10, 207, 151, 0.15)'}}>Explore <HiOutlineChevronRight  /></Link> */}
+      <HomeContainer id="home">
+        <HomeWrapper>
+        <HomeFirst>
+            <Slide>
+              <Image
+                src={titleimg} alt="title image"
+              />
+            </Slide>
+          </HomeFirst>
+          <HomeLeft >
+            <Slide>
+            <h1 style={{fontSize:'55px'}} className='align-items-left fw-bold'>Inventory & Stock Management Solution</h1>
+            <p className='text-dark'>Welcome to our Inventory and Stock Management Website, your one-stop solution for efficient and seamless inventory management. Our platform is designed to help businesses of all sizes effectively track and manage their inventory in real-time.</p>
+            {/* <Link to={'/'} className='btn btn-success shadow'>Go To Dashboard</Link> */}
+            {/* <Link to={'/login'} className='btn btn-success btn-lg me-5' style={{boxShadow:'0px 5px 10px 1px rgba(10, 207, 151, 0.15)'}}>Explore <HiOutlineChevronRight  /></Link> */}
 
-      {isLoggedIn? <Link to={'/products'} className='btn btn-success btn-lg shadow' style={{boxShadow:'0px 5px 10px 1px rgba(10, 207, 151, 0.15)'}}>Go To Dashboard <HiOutlineChevronRight  /></Link>:
-      <Link to={'/login'} className='btn btn-success btn-lg me-5' style={{boxShadow:'0px 5px 10px 1px rgba(10, 207, 151, 0.15)'}}>Explore <HiOutlineChevronRight  /></Link>
+      {isLoggedIn? <Link to={'/products'} className='btn btn-success btn-lg shadow ' style={{boxShadow:'0px 5px 10px 1px rgba(10, 207, 151, 0.15)'}}>Go To Dashboard <HiOutlineChevronRight  /></Link>:
+      <Link to={'/login'} className='btn btn-success btn-lg me-5 ' style={{boxShadow:'0px 5px 10px 1px rgba(10, 207, 151, 0.15)'}}>Explore <HiOutlineChevronRight  /></Link>
       }
-      </div>
-      </Slide>
-      </Col>
-      
-      <Col sm={12} md={6}>
-      <Fade delay={500} cascade damping={0.1}>
-      <img width={'100%'} height={'470px'} src={titleimg} alt="title image" />
-      </Fade>
-      </Col>
-      
+            </Slide>
 
-     </Row>
-    </div>
+          </HomeLeft>
+          <HomeRight>
+            <Fade delay={500} cascade damping={0.1}>
+              <Image
+                src={titleimg} alt="title image" 
+              />
+            </Fade>
+          </HomeRight>
+        </HomeWrapper>
+        
+      </HomeContainer>
+    </main>
 
 
 
