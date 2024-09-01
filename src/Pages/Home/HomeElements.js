@@ -61,7 +61,7 @@ export const HomeLeft = styled.div`
 
   h1 {
     font-size: 2.8rem;
-    color: #012c3d;
+    color: #495057;
     opacity: 0.98;
     font-weight: 400;
   }
@@ -75,7 +75,7 @@ export const HomeLeft = styled.div`
 
   p {
     font-size: 17px;
-    color: #f6f6f6;
+    color: #495057;
     opacity: 0.85;
   }
 
