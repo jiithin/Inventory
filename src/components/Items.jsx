@@ -124,12 +124,12 @@ function Items() {
 
   return (
     <>
-    <Fade direction='down'>
+    <Fade direction='right'>
     <div>
 
         {/* inventory stats cards */}
         <h2 className='mt-5 ms-3 fw-bold ' style={{color:'#6b76ef'}}><FiGrid className='me-3'/>INVENTORY STATUS</h2>
-        <ul className="nav nav-tabs p-3 mt-2 justify-content-between" role="tablist">
+        <ul id='fullscreeen' className="nav nav-tabs p-3 mt-2 justify-content-between" role="tablist">
                 <li className="nav-item" role="presentation" >
                 <div className="card border-primary ms-3 mb-3 p-2" style={{width:'14rem'}} >
                 <p className="card-text" style={{fontSize:'20px'}}>Total Products</p>
@@ -175,12 +175,14 @@ function Items() {
     </div> 
     
     {/*item table */}
-    <div className="table-responsive">
+    <div className="table-responsive" style={{ maxHeight: "350px",
+        overflowY: "auto" }}>
     {!isLoading && products.length === 0 ? (
             <p className='text-primary'> No product found, please add a product...</p>
           ) : (
       <table className="table table-hover mt-3">
-  <thead>
+  <thead style={{ position: "sticky",
+            top: "0" }}>
     <tr>
       <th scope="col" className='fw-bold d-flex'>S/N</th>
       <th scope="col" className='fw-bold'>Name </th>
@@ -198,13 +200,13 @@ function Items() {
   <tr className="table-secondary" key={_id}>
     
       <th scope="row">{index + 1}</th>
-      <td>{shortenText(name, 16)}</td>
+      <td><Link to={`/viewproduct/${_id}`} style={{textDecoration:"none"}}>{shortenText(name, 16)}</Link></td>
       <td>{category}</td>
       <td>{"$"}{price} </td>
       <td>{quantity} </td>
       <td>{"$"}{price * quantity}</td>
       <td>
-        <Link to={`/viewproduct/${_id}`}><i class="fa-solid fa-expand me-4" style={{color:'#5c5c5c'}}></i></Link> 
+        {/* <Link to={`/viewproduct/${_id}`}><i class="fa-solid fa-expand me-4" style={{color:'#5c5c5c'}}></i></Link>  */}
         <Link to={`/editproduct/${_id}`}><i class="fa-solid fa-file-pen  me-3" style={{color:'#5c5c5c'}}></i></Link>  
         <Link onClick={()=>confirmDelete(_id,name)}><i class="fa-solid fa-trash " style={{color:'#5c5c5c'}}></i></Link>
       </td>
