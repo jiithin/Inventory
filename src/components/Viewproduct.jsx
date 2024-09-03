@@ -44,10 +44,13 @@ function Viewproduct() {
           <div className="col-6">
             <h4 className="mt-5 ms-5">
             {product.name}
-              <Link to={`/editproduct/${id}`}>
-                <i className="fa-solid fa-pen text-muted  ms-3"></i>
-              </Link>{" "}
+              
             </h4>
+            <p className="mt-1 ms-5">
+            <Link to={`/editproduct/${id}`} className='btn'>
+                <small>Edit Product</small><i className="fa-solid fa-pen text-muted  ms-2"></i>
+              </Link>{" "}
+            </p>
             
             <h6 className="mb-1 ms-5">SKU : <span className='text-muted'>{product.sku}</span></h6>
             <small className="mb-1 ms-5">Added Date: <span className='text-muted'>{product.createdAt.toLocaleString("en-US").slice(0,10)}</span></small>
