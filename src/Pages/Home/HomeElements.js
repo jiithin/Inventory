@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const HomeContainer = styled.div`
 background-color: secondary;
-  padding-bottom: 6rem;
+  padding-bottom: 13rem;
   padding-top: 4rem;
   padding-right: 1rem;
   padding-left: 1rem;
